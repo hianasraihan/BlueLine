@@ -118,7 +118,7 @@ export default function HomePage() {
               title: "Wax & Poles",
               desc: "Perawatan cat mobil agar tetap mengkilap dan terlindungi.",
             }, {
-              title: "Antirust / Detailing",
+              title: "Detailing",
               desc: "Perawatan menyeluruh untuk hasil bersih maksimal.",
             }].map((item, i) => (
               <motion.div
