@@ -2,6 +2,7 @@
 import Navbar from "./Navbar";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import WhatsAppFloat from "./WhatsAppFloat";
 
 export default function HomePage() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -116,91 +117,83 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Layanan Section */}
-        <section id="layanan" className="py-16 px-4 bg-black overflow-hidden">
-          <motion.h2
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={transitionProps}
-            className="text-2xl md:text-3xl font-bold text-center mb-10 text-white"
-          >
-            Layanan Kami
-          </motion.h2>
+      {/* Layanan Section */}
+<section id="layanan" className="py-16 px-4 bg-black overflow-hidden">
+  <motion.h2
+    initial={{ x: 50, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={transitionProps}
+    className="text-2xl md:text-3xl font-bold text-center mb-10 text-white"
+  >
+    Layanan Kami
+  </motion.h2>
 
-          <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 overflow-hidden">
-            {[{
-              title: "Cuci Motor",
-              desc: "Mulai dari Rp17.000, motor bersih mengkilap dalam waktu yang cepat.",
-            }, {
-              title: "Cuci Mobil",
-              desc: "Mulai dari Rp40.000 mobil kinclong luar dalam, cepat dan teliti.",
-            }, {
-              title: "Wax & Poles",
-              desc: "Perawatan cat mobil agar tetap mengkilap dan terlindungi.",
-            }, {
-              title: "Detailing",
-              desc: "Perawatan menyeluruh untuk hasil bersih maksimal.",
-            }].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ ...transitionProps, delay: i * 0.1 }}
-                className="bg-[#00AEEF] text-white p-6 rounded-xl shadow-md hover:shadow-lg transition w-full"
-              >
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm md:text-base">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+  <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 overflow-hidden">
+    {[
+      { title: "Cuci Motor", desc: "Mulai dari Rp17.000, motor bersih mengkilap dalam waktu yang cepat." },
+      { title: "Cuci Mobil", desc: "Mulai dari Rp40.000 mobil kinclong luar dalam, cepat dan teliti." },
+      { title: "Wax & Poles", desc: "Perawatan cat mobil agar tetap mengkilap dan terlindungi." },
+      { title: "Detailing", desc: "Perawatan menyeluruh untuk hasil bersih maksimal." },
+    ].map((item, i) => (
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ ...transitionProps, delay: i * 0.15 }}
+        className="bg-[#00AEEF] text-white p-6 rounded-xl shadow-md hover:shadow-xl hover:scale-[1.03] transform transition duration-300 ease-in-out cursor-pointer"
+      >
+        <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+        <p className="text-sm md:text-base">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
-        {/* Alat & Bahan Section */}
-        <section className="py-16 px-4 bg-black text-white overflow-hidden">
-          <motion.h2
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={transitionProps}
-            className="text-2xl md:text-4xl font-bold text-center mb-12 text-white"
-          >
-            Alat & Bahan
-          </motion.h2>
 
-          <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center px-4 overflow-hidden">
-            {[{
-              src: "/bahan1.jpg", label: "nanoTECH"
-            }, {
-              src: "/bahan2.jpg", label: "Sonax"
-            }, {
-              src: "/bahan3.jpg", label: "Meguiars"
-            }, {
-              src: "/bahan4.jpg", label: "Mesin Poles ShineMate"
-            }].map(({ src, label }, index) => (
-              <motion.div
-                key={label}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ ...transitionProps, delay: index * 0.1 }}
-                className="bg-[#00AEEF] rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
-              >
-                <div className="flex-1">
-                  <img
-                    src={src}
-                    alt={label}
-                    className="w-full h-full object-cover aspect-[1/1.1]"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-white">{label}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+       {/* Alat & Bahan Section */}
+<section className="py-16 px-4 bg-black text-white overflow-hidden">
+  <motion.h2
+    initial={{ x: -50, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={transitionProps}
+    className="text-2xl md:text-4xl font-bold text-center mb-12 text-white"
+  >
+    Alat & Bahan
+  </motion.h2>
+
+  <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center px-4 overflow-hidden">
+    {[
+      { src: "/bahan1.jpg", label: "nanoTECH" },
+      { src: "/bahan2.jpg", label: "Sonax" },
+      { src: "/bahan3.jpg", label: "Meguiars" },
+      { src: "/bahan4.jpg", label: "Mesin Poles ShineMate" },
+    ].map(({ src, label }, index) => (
+      <motion.div
+        key={label}
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ ...transitionProps, delay: index * 0.15 }}
+        className="bg-[#00AEEF] rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 overflow-hidden flex flex-col cursor-pointer"
+      >
+        <div className="flex-1">
+          <img
+            src={src}
+            alt={label}
+            className="w-full h-full object-cover aspect-[1/1.1]"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-white">{label}</h3>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
         {/* Dokumentasi Section */}
         <section className="py-16 px-4 bg-black text-white">
@@ -277,6 +270,7 @@ export default function HomePage() {
           <p>&copy; 2025 BlueLine | Jl. Mekar Sari No.80, RT.010/RW.003, Bekasi Jaya, Kec. Bekasi Tim, Kota, Kota Bks, Jawa Barat 17112 | 0877-8528-1817</p>
         </footer>
       </motion.main>
+       <WhatsAppFloat />
     </>
   );
 }
