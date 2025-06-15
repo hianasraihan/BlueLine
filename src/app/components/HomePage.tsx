@@ -1,12 +1,14 @@
 "use client";
 import Navbar from "./Navbar";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, cubicBezier } from "framer-motion";
 import WhatsAppFloat from "./WhatsAppFloat";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const router = useRouter();
 
   const dokumentasiImages = [
     "/dk1.jpg", "/dk2.jpg", "/dk3.jpg", "/dk4.jpg",
@@ -15,7 +17,7 @@ export default function HomePage() {
 
   const transitionProps = {
     duration: 1,
-    ease: [0.25, 0.1, 0.25, 1]
+    ease: cubicBezier (0.25, 0.1, 0.25, 1)
   };
 
   return (
@@ -152,7 +154,7 @@ export default function HomePage() {
 </section>
 
 
-       {/* Alat & Bahan Section */}
+ {/* Alat & Bahan Section */}
 <section className="py-16 px-4 bg-black text-white overflow-hidden">
   <motion.h2
     initial={{ x: -50, opacity: 0 }}
@@ -166,11 +168,11 @@ export default function HomePage() {
 
   <div className="max-w-6xl w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center px-4 overflow-hidden">
     {[
-      { src: "/bahan1.jpg", label: "nanoTECH" },
-      { src: "/bahan2.jpg", label: "Sonax" },
-      { src: "/bahan3.jpg", label: "Meguiars" },
-      { src: "/bahan4.jpg", label: "Mesin Poles ShineMate" },
-    ].map(({ src, label }, index) => (
+      { src: "/bahan1.jpg", label: "nanoTECH", slug: "nano-tech" },
+      { src: "/bahan2.jpg", label: "Sonax", slug: "sonax" },
+      { src: "/bahan3.jpg", label: "Meguiars", slug: "meguiars" },
+      { src: "/bahan4.jpg", label: "Mesin Poles ShineMate", slug: "shine-mate" },
+    ].map(({ src, label, slug }, index) => (
       <motion.div
         key={label}
         initial={{ y: 30, opacity: 0 }}
@@ -178,6 +180,7 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ ...transitionProps, delay: index * 0.15 }}
         className="bg-[#00AEEF] rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition duration-300 overflow-hidden flex flex-col cursor-pointer"
+        onClick={() => router.push(`/alat/${slug}`)} // <-- navigasi ke slug
       >
         <div className="flex-1">
           <img
