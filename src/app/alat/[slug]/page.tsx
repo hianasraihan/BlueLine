@@ -37,7 +37,7 @@ const alatData: Record<string, AlatDetail> = {
   "shine-mate": {
     title: "Mesin Poles ShineMate",
     description:
-      "ShineMate adalah merek mesin poles profesional yang dikenal karena kualitas dan ketahanannya. Mesin ini dirancang khusus untuk keperluan detailing, memberikan hasil poles yang halus dan merata. Dengan desain ergonomis dan getaran minimal, ShineMate banyak digunakan oleh detailer untuk meningkatkan hasil akhir pada permukaan cat kendaraan.",
+      "ShineMate adalah merek mesin poles profesional yang dikenal karena kualitas dan ketahanannya. Mesin ini dirancang khusus untuk keperluan detailing, memberikan hasil poles yang halus dan merata. Dengan desain ergonomis dan getaran minimal, ShineMate banyak digunakan oleh detailer untuk meningkatkan hasil akhir pada permukaan cat.",
     image: "/bahan4.jpg",
   },
 };
