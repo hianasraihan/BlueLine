@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blue-line-pearl.vercel.app/sitemap.xml
