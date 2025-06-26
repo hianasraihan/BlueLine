@@ -39,6 +39,20 @@ export default function Head() {
         name="twitter:image"
         content="https://blue-line-pearl.vercel.app/og-image.jpg"
       />
+
+      {/* Structured Data for Logo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Blue Line AutoCare",
+            url: "https://blue-line-pearl.vercel.app",
+            logo: "https://blue-line-pearl.vercel.app/blue.png",
+          }),
+        }}
+      />
     </>
   );
 }
