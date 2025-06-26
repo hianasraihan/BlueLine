@@ -10,7 +10,7 @@ export default function Head() {
       <link rel="canonical" href="https://blue-line-pearl.vercel.app/" />
 
       {/* Google Site Verification */}
-      <meta name="google-site-verification" content="googleaa78deb95975de25" />
+      <meta name="google-site-verification" content="googleaa78deb95975de25.html" />
 
       {/* Open Graph / Facebook */}
       <meta
