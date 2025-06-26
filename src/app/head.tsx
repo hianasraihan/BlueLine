@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Blue Line AutoCare - Profesional dan Terpercaya</title>
+      <title>Blue Line AutoCare</title>
       <meta
         name="description"
         content="Profesional dalam Perawatan, Bersih dalam Setiap Detail. Blue Line AutoCare siap melayani kebutuhan detailing kendaraan Anda dengan harga terjangkau dan kualitas internasional."
@@ -9,11 +9,10 @@ export default function Head() {
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://blue-line-pearl.vercel.app/" />
 
+      <link rel="icon" href="/blue.png?v=2" type="image/png" />
+
       {/* Open Graph / Facebook */}
-      <meta
-        property="og:title"
-        content="Blue Line AutoCare - Profesional dan Terpercaya"
-      />
+      <meta property="og:title" content="Blue Line AutoCare" />
       <meta
         property="og:description"
         content="Profesional dalam Perawatan, Bersih dalam Setiap Detail. Blue Line AutoCare siap melayani kebutuhan detailing kendaraan Anda dengan harga terjangkau dan kualitas internasional."
