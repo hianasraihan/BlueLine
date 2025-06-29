@@ -9,7 +9,10 @@ export default function Head() {
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://blue-line-pearl.vercel.app/" />
 
+      {/* Favicon PNG */}
       <link rel="icon" href="/blue.png?v=2" type="image/png" />
+      {/* Favicon ICO (untuk tab browser) */}
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:title" content="Blue Line AutoCare" />
@@ -48,7 +51,7 @@ export default function Head() {
             "@type": "Organization",
             name: "Blue Line AutoCare",
             url: "https://blue-line-pearl.vercel.app",
-            logo: "https://blue-line-pearl.vercel.app/blue.png",
+            logo: "https://blue-line-pearl.vercel.app/Logo.jpg",
           }),
         }}
       />
