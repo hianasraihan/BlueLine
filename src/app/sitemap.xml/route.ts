@@ -1,9 +1,11 @@
+// app/sitemap.xml/route.ts
+
 import { NextResponse } from 'next/server';
 
 const SITE_URL = 'https://blue-line-pearl.vercel.app';
 
 const staticPages = [
-  '',
+  '', // homepage
   'layanan',
   'alat/nano-tech',
   'alat/sonax',
@@ -11,28 +13,28 @@ const staticPages = [
   'alat/shine-mate',
 ];
 
-function generateSiteMap() {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  >
-    ${staticPages
-      .map((page) => {
-        return `
+function generateSiteMap(): string {
+  const urls = staticPages.map((page) => {
+    const path = page ? `/${page}` : '';
+    return `
       <url>
-        <loc>${SITE_URL}/${page}</loc>
+        <loc>${SITE_URL}${path}</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
       </url>
     `;
-      })
-      .join('')}
-  </urlset>
-  `;
+  });
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${urls.join('')}
+    </urlset>`;
 }
 
 export async function GET() {
-  const sitemap = generateSiteMap();
+  const body = generateSiteMap();
 
-  return new NextResponse(sitemap, {
+  return new NextResponse(body, {
     headers: {
       'Content-Type': 'application/xml',
     },
