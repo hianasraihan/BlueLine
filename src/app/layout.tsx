@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/blue.png", // icon tambahan untuk perangkat Apple
+    apple: "/blue.png",
   },
   openGraph: {
     title: "Blue Line AutoCare",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Blue Line AutoCare",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://blue-line-pearl.vercel.app/og-image.jpg", // FULL URL
         width: 1200,
         height: 630,
         alt: "Blue Line AutoCare",
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue Line AutoCare - Profesional dan Terpercaya",
+    title: "Blue Line AutoCare",
     description:
       "Profesional dalam Perawatan, Bersih dalam Setiap Detail. Blue Line AutoCare siap melayani kebutuhan detailing kendaraan Anda dengan harga terjangkau dan kualitas internasional.",
-    images: ["/og-image.jpg"],
+    images: ["https://blue-line-pearl.vercel.app/og-image.jpg"], // FULL URL
   },
 };
 
